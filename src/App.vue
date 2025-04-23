@@ -7,18 +7,17 @@
 
     const decrement = () => {
         cont.value--;
-        console.log(cont.value);
     }
 
     const increment = () => {
         cont.value++;
-        console.log(cont.value);
     }
 </script>
 
 <template>
     <!-- Una vez definida la referencia, se puede mutar su valor facilmente -->
-    <button type="button" @click="decrement">-</button>
+    <button type="button" @click="decrement" :disabled="cont === 0">-</button>
+    <!-- Aquí no se coloca el .value porque del lado de html vue lo hace por detrás -->
     {{ cont }}
     <button type="button" @click="increment">+</button>
 </template>
