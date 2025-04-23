@@ -1,18 +1,26 @@
 <script setup>
-    const msg = '<h1>Hola mundo</h1>';
+    const attrs = {
+        id: 'text-content',
+        name: 'text-content',
+        class: 'mh-blue'
+    };
+
+    // const clases = 'mh-blue';
 </script>
 
 <template>
-    <!-- Interpolación, mostrar el contenido de una variable js en html como texto plano {{  }} -->
-    <!-- Si se quiere renderizar contenido html se usa la directiva v-html equivalente a {!!  !!} -->
-    <header v-html="msg"></header>
+    <!-- Agregar un objeto de atributos dinámicamente -->
+    <p v-bind="attrs">Hola mundo</p>
+    
+    <!-- Método abreviado para un único elemento -->
+    <!-- <p :class="clases">Hola mundo</p> -->
 </template>
 
-<!-- Para darle estilos a elementos html renderizados se debe eliminar el atributo scoped -->
-<style>
-    h1 { 
+<style scoped>
+    .mh-blue {
         color: #06f;
         font-weight: 600;
+        font-size: 1.6em;
         text-transform: uppercase;
     }
 </style>
