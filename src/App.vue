@@ -1,11 +1,16 @@
 <script setup>
-    const number = 5;
+    // Para declarar la reactividad dentro de composition, se usa la función ref
+    import { ref } from 'vue';
 
-    const suma = (a, b) => a + b;
+    // Esta función envuelve un objeto o variable dentro de una referencia con propiedad .value
+    let cont = ref(0);
 </script>
 
 <template>
-    <p>Resultado: 5 + 6 = {{ suma(5, 6) }}</p>
+    <!-- Una vez definida la referencia, se puede mutar su valor facilmente -->
+    <button type="button" @click="cont--">-</button>
+    {{ cont }}
+    <button type="button" @click="cont++">+</button>
 </template>
 
 <style scoped>
