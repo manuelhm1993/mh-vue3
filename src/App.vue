@@ -1,19 +1,17 @@
 <script setup>
-    // Para trabajar con propiedades computadas es necesario importar la definición computed
-    import { computed } from 'vue';
+    import { ref } from 'vue';
 
-    const ok = true;
+    const active = ref(false);
 
-    // Las propiedades computadas siempre deben retornar un valor y computed recibe un callback
-    const isOk = computed(() => ok ? 'Si' : 'No');
-
-    /* Las funciones tradicionales pueden conseguir el mismo efecto que las propiedades computadas, pero la diferencia fundamental es que las propiedades computadas almacenan en caché los resultados, es decir, los cálculos solo se hacen la primera vez que se llama, las funciones calculan en cada llamada */
-    // const isOk = () => ok ? 'Si' : 'No';
+    const toggle = () => active.value = !active.value;
 </script>
 
 <template>
-    <!-- Las propiedades computadas funcionan muy similar a un método, pero no se llama con paréntesis -->
-    {{ isOk }}
+    <button type="button" v-on:click="toggle">{{ active ? 'Ocultar' : 'Mostrar' }}</button>
+
+    <p v-show="active">
+        Hola mundo
+    </p>
 </template>
 
 <style scoped>
