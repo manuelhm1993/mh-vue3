@@ -1,19 +1,20 @@
 <script setup>
-    // Para declarar la reactividad dentro de composition, se usa la función ref
-    import { ref } from 'vue';
+    // Para declarar la reactividad dentro de composition, se usa la función ref (primitivos)
+    // Para declarar la reactividad dentro de composition, se usa la función rective (objetos)
+    import { reactive } from 'vue';
 
-    // Al trabajar con objetos, ref no es la mejor opción
-    let state = ref({
+    // Al trabajar con objetos se debe usar reactive simplemente convertir el objeto en reactivo y no envolver
+    let state = reactive({
         cont: 0
     });
 
     const decrement = () => {
         // Al trabajar con objetos, se debe acceder a las propiedades luego del value
-        state.value.cont--;
+        state.cont--;
     }
 
     const increment = () => {
-        state.value.cont++;
+        state.cont++;
     }
 </script>
 
