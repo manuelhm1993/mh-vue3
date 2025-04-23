@@ -1,23 +1,19 @@
 <script setup>
     import { ref } from 'vue';
 
-    const awesome = ref(false);
+    const type = ref('A');
 
-    const toggle = () => awesome.value = !awesome.value;
+    const setType = (e) => type.value = e.target.textContent;
 </script>
 
 <template>
-    <button type="button" @click="toggle">{{ awesome ? 'Ocultar' : 'Mostrar' }} mensaje</button>
+    <button type="button" @click="setType">A</button>
+    <button type="button" @click="setType">B</button>
+    <button type="button" @click="setType">C</button>
 
-    <!-- Muestra el contenido solo si la condición es verdadera -->
-    <p v-if="awesome">
-        MHenriquez es asombroso
-    </p>
-
-    <!-- Renderizado en caso de que la condición sea falsa, el v-else debe ir inmediatamente a continuación de un v-if o v-else-if -->
-    <p v-else>
-        Haz click :D
-    </p>
+    <p v-if="type === 'A'">A</p>
+    <p v-else-if="type === 'B'">B</p>
+    <p v-else>C</p>
 </template>
 
 <style scoped>
