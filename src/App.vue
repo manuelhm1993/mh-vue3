@@ -1,17 +1,20 @@
 <script setup>
-    import { ref } from 'vue';
-
-    const active = ref(false);
-
-    const toggle = () => active.value = !active.value;
+    const alumnos = [
+        {nombre: 'Manuel', edad: 31},
+        {nombre: 'Luna', edad: 27},
+        {nombre: 'Mariandry', edad: 24},
+        {nombre: 'Santiago', edad: 24},
+        {nombre: 'Paola', edad: 30}
+    ];
 </script>
 
 <template>
-    <button type="button" v-on:click="toggle">{{ active ? 'Ocultar' : 'Mostrar' }}</button>
-
-    <p v-show="active">
-        Hola mundo
-    </p>
+    <ul>
+        <!-- Renderizar una lista con un bucle foreach -->
+        <li v-for="alumno in alumnos">
+            {{ alumno.nombre }} - {{ alumno.edad }}
+        </li>
+    </ul>
 </template>
 
 <style scoped>
