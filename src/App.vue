@@ -1,47 +1,23 @@
+<!-- Estructura de un componente Vue -->
+<!--  -->
+<!-- Script - Tiene la lógica js (opcional) -->
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+    // El atributo setup indica que se está trabajando con composition y sintaxis abreviada
+    const msg = 'Hola mundo';
 </script>
 
+<!-- Template - Tiene el código html que será dinámico (obligatorio) -->
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <!-- Los atributos o parámetros se muestran igual que en blade con la sintaxis {{  }} -->
+    <h1>{{ msg }}</h1>
 </template>
 
+<!-- Style - Define los estilos css aplicados al template (opcional) -->
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+    /* El atrubuto scoped indica que los estilos de este componente solo se aplicarán a este template */
+    h1 { 
+        color: #06f;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
 </style>
