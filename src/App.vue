@@ -1,26 +1,13 @@
 <script setup>
-    const attrs = {
-        id: 'text-content',
-        name: 'text-content',
-        class: 'mh-blue'
-    };
+    const number = 5;
 
-    // const clases = 'mh-blue';
+    const suma = (a, b) => a + b;
 </script>
 
 <template>
-    <!-- Agregar un objeto de atributos dinámicamente -->
-    <p v-bind="attrs">Hola mundo</p>
-    
-    <!-- Método abreviado para un único elemento -->
-    <!-- <p :class="clases">Hola mundo</p> -->
+    <p>Resultado: 5 + 6 = {{ suma(5, 6) }}</p>
 </template>
 
 <style scoped>
-    .mh-blue {
-        color: #06f;
-        font-weight: 600;
-        font-size: 1.6em;
-        text-transform: uppercase;
-    }
+    
 </style>
