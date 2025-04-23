@@ -10,14 +10,15 @@
 
 <template>
     <ul>
-        <!-- Renderizar una lista con un bucle foreach -->
-        <li v-for="(alumno, i) in alumnos">
-            <!-- Recuperar el índice de un foreach se agrega un paréntesis y un segundo parámetro -->
-            {{ i + 1 }}. {{ alumno.nombre }} - {{ alumno.edad }}
+        <!-- Desestructurar el objeto -->
+        <li v-for="({ nombre, edad }, i) in alumnos">
+            {{ i + 1 }}. {{ nombre }} - {{ edad }}
         </li>
     </ul>
 </template>
 
 <style scoped>
-    
+    li {
+        list-style: none;
+    }
 </style>
