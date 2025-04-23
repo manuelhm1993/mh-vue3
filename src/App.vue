@@ -11,8 +11,9 @@
 <template>
     <ul>
         <!-- Renderizar una lista con un bucle foreach -->
-        <li v-for="alumno in alumnos">
-            {{ alumno.nombre }} - {{ alumno.edad }}
+        <li v-for="(alumno, i) in alumnos">
+            <!-- Recuperar el índice de un foreach se agrega un paréntesis y un segundo parámetro -->
+            {{ i + 1 }}. {{ alumno.nombre }} - {{ alumno.edad }}
         </li>
     </ul>
 </template>
