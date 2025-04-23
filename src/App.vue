@@ -96,20 +96,20 @@
 <template>
     <ul>
         <!-- Desestructurar el objeto -->
-        <li v-for="({ nombre, edad, cursos }, i) in alumnos">
-            <p>{{ i + 1 }}. {{ nombre }} - {{ edad }}</p>
+        <li v-for="alumno in alumnos">
+            <p>{{ alumno.nombre }} - {{ alumno.edad }}</p>
             <ul>
-                <li v-for="(curso, j) in cursos">
-                    <!-- Uso de template strings dentro de la interpolación vue -->
-                    {{ `${i + 1}.${j + 1}.` }} {{ curso.nombre }} - {{ curso.nota }}
-                </li>
+                <!-- Uso de template para poder hacer la validación del if -->
+                <template v-for="curso in alumno.cursos">
+                    <li v-if="curso.nota >= 18">
+                        {{ curso.nombre }} - {{ curso.nota }}
+                    </li>
+                </template>
             </ul>
         </li>
     </ul>
 </template>
 
 <style scoped>
-    li {
-        list-style: none;
-    }
+
 </style>
