@@ -1,26 +1,17 @@
 <script setup>
     import { ref } from 'vue';
 
-    const type = ref('A');
+    const active = ref(false);
 
-    const setType = (e) => type.value = e.target.textContent;
+    const toggle = () => active.value = !active.value;
 </script>
 
 <template>
-    <button type="button" @click="setType">A</button>
-    <button type="button" @click="setType">B</button>
-    <button type="button" @click="setType">C</button>
+    <button type="button" v-on:click="toggle">{{ active ? 'Ocultar' : 'Mostrar' }}</button>
 
-    <!-- La solución más eficiente es colocar todo en un template y vue lo renderiza -->
-    <template v-if="type === 'A'">
-        <p>Esta es</p>
-        <p>la etiqueta</p>
-        <p>A</p>
-    </template>
-
-    <p v-else-if="type === 'B'">B</p>
-
-    <p v-else>C</p>
+    <p v-show="active">
+        Hola mundo
+    </p>
 </template>
 
 <style scoped>
