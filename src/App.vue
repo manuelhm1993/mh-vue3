@@ -1,21 +1,42 @@
 <script setup>
-    // Para trabajar con propiedades computadas es necesario importar la definición computed
-    import { computed } from 'vue';
-
-    const ok = true;
-
-    // Las propiedades computadas siempre deben retornar un valor y computed recibe un callback
-    const isOk = computed(() => ok ? 'Si' : 'No');
-
-    /* Las funciones tradicionales pueden conseguir el mismo efecto que las propiedades computadas, pero la diferencia fundamental es que las propiedades computadas almacenan en caché los resultados, es decir, los cálculos solo se hacen la primera vez que se llama, las funciones calculan en cada llamada */
-    // const isOk = () => ok ? 'Si' : 'No';
+    const alumnos = [
+        {
+            id: 1,
+            nombre: 'Manuel', 
+            edad: 31,
+        },
+        {
+            id: 2,
+            nombre: 'Luna', 
+            edad: 27,
+        },
+        {
+            id: 3,
+            nombre: 'Mariandry', 
+            edad: 24,
+        },
+        {
+            id: 4,
+            nombre: 'Santiago', 
+            edad: 24,
+        },
+        {
+            id: 5,
+            nombre: 'Paola', 
+            edad: 30,
+        },
+    ];
 </script>
 
 <template>
-    <!-- Las propiedades computadas funcionan muy similar a un método, pero no se llama con paréntesis -->
-    {{ isOk }}
+    <ul>
+        <!-- Cuando se usen CRUDs si no se identifican los items podrá fallar, en ese caso un id es necesario -->
+        <li v-for="alumno in alumnos" :key="alumno.id">
+            {{ alumno.nombre }} - {{ alumno.edad }}
+        </li>
+    </ul>
 </template>
 
 <style scoped>
-    
+
 </style>
