@@ -7,13 +7,17 @@
 <template>
     <header>
         <h3>Mensaje:</h3>
-        <p>{{ text }}</p>
     </header>
 
     <section>
         <form @submit.prevent="">
-            <!-- El modificador lazy actualiza la propiedad al perder el foco -->
-            <input type="text" v-model.lazy="text">
+            <!-- Toda entrada de datos se considera texto, con el modificador number hace la conversión -->
+            <input type="text" v-model.number="text">
+
+            <!-- Ahora en lugar de concatenar, hará la suma -->
+            <button type="button" @click="console.log(text + 5)">
+                Mostrar en consola
+            </button>
         </form>
     </section>
 </template>
