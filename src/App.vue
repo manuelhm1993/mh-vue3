@@ -1,13 +1,12 @@
 <script setup>
     const enviar = (e) => {
-        e.preventDefault();
-        
         console.log('Enviando');
     }
 </script>
 
 <template>
-    <form @submit="enviar">
+    <!-- Prevent default estilo vue -->
+    <form @submit.prevent="enviar">
         <input type="text">
 
         <button type="submit">
