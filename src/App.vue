@@ -1,18 +1,23 @@
 <script setup>
-    const enviar = (e) => {
-        console.log('Enviando');
-    }
+    import { ref } from 'vue';
+
+    const text = ref('');
 </script>
 
 <template>
-    <!-- Prevent default estilo vue -->
-    <form @submit.prevent="enviar">
-        <input type="text">
+    <header>
+        <h3>Mensaje:</h3>
+    </header>
 
-        <button type="submit">
-            Enviar
-        </button>
-    </form>
+    <section>
+        <form @submit.prevent="">
+            <input type="text" v-model.trim="text">
+
+            <button type="button" @click="console.log(text)">
+                Mostrar en consola
+            </button>
+        </form>
+    </section>
 </template>
 
 <style scoped>
