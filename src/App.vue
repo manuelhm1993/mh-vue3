@@ -1,111 +1,38 @@
 <script setup>
     const alumnos = [
         {
+            id: 1,
             nombre: 'Manuel', 
             edad: 31,
-            cursos: [
-                {
-                    nombre: 'Matemáticas',
-                    nota: 20,
-                },
-                {
-                    nombre: 'Física',
-                    nota: 15,
-                },
-                {
-                    nombre: 'Química',
-                    nota: 18,
-                },
-            ],
         },
         {
+            id: 2,
             nombre: 'Luna', 
             edad: 27,
-            cursos: [
-                {
-                    nombre: 'Matemáticas',
-                    nota: 20,
-                },
-                {
-                    nombre: 'Física',
-                    nota: 15,
-                },
-                {
-                    nombre: 'Química',
-                    nota: 18,
-                },
-            ],
         },
         {
+            id: 3,
             nombre: 'Mariandry', 
             edad: 24,
-            cursos: [
-                {
-                    nombre: 'Matemáticas',
-                    nota: 20,
-                },
-                {
-                    nombre: 'Física',
-                    nota: 15,
-                },
-                {
-                    nombre: 'Química',
-                    nota: 18,
-                },
-            ],
         },
         {
+            id: 4,
             nombre: 'Santiago', 
             edad: 24,
-            cursos: [
-                {
-                    nombre: 'Matemáticas',
-                    nota: 20,
-                },
-                {
-                    nombre: 'Física',
-                    nota: 15,
-                },
-                {
-                    nombre: 'Química',
-                    nota: 18,
-                },
-            ],
         },
         {
+            id: 5,
             nombre: 'Paola', 
             edad: 30,
-            cursos: [
-                {
-                    nombre: 'Matemáticas',
-                    nota: 20,
-                },
-                {
-                    nombre: 'Física',
-                    nota: 15,
-                },
-                {
-                    nombre: 'Química',
-                    nota: 18,
-                },
-            ],
         },
     ];
 </script>
 
 <template>
     <ul>
-        <!-- Desestructurar el objeto -->
-        <li v-for="alumno in alumnos">
-            <p>{{ alumno.nombre }} - {{ alumno.edad }}</p>
-            <ul>
-                <!-- Uso de template para poder hacer la validación del if -->
-                <template v-for="curso in alumno.cursos">
-                    <li v-if="curso.nota >= 18">
-                        {{ curso.nombre }} - {{ curso.nota }}
-                    </li>
-                </template>
-            </ul>
+        <!-- Cuando se usen CRUDs si no se identifican los items podrá fallar, en ese caso un id es necesario -->
+        <li v-for="alumno in alumnos" :key="alumno.id">
+            {{ alumno.nombre }} - {{ alumno.edad }}
         </li>
     </ul>
 </template>
