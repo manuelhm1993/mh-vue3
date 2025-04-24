@@ -1,23 +1,16 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref, watch } from 'vue';
 
-    const text = ref('');
+    const cont = ref(0);
+
+    watch(cont, (newVal, oldVal) => {
+        console.log(`La variable cont cambió: ${oldVal} -> ${newVal}`);
+    }, { immediate: true }); // Si se desea que el watch se ejecute al cargar se usa immediate
 </script>
 
 <template>
-    <header>
-        <h3>Mensaje:</h3>
-    </header>
-
-    <section>
-        <form @submit.prevent="">
-            <input type="text" v-model.trim="text">
-
-            <button type="button" @click="console.log(text)">
-                Mostrar en consola
-            </button>
-        </form>
-    </section>
+    {{ cont }}
+    <button type="button" @click="cont++">+</button>
 </template>
 
 <style scoped>
