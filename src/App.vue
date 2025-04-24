@@ -1,17 +1,15 @@
 <script setup>
-    const enviar = (e) => {
-        console.log('Enviando');
-    }
+    import { ref } from 'vue';
+
+    const texto = ref('');
 </script>
 
 <template>
-    <!-- Prevent default estilo vue -->
-    <form @submit.prevent="enviar">
-        <input type="text">
+    <p v-show="texto">Mensaje: {{ texto }}</p>
 
-        <button type="submit">
-            Enviar
-        </button>
+    <form>
+        <!-- Vincular el valor del input con el objeto texto -->
+        <input type="text" v-model="texto">
     </form>
 </template>
 
