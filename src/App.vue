@@ -1,19 +1,42 @@
 <script setup>
-    import { ref } from 'vue';
-
-    const active = ref(false);
-
-    const toggle = () => active.value = !active.value;
+    const alumnos = [
+        {
+            id: 1,
+            nombre: 'Manuel', 
+            edad: 31,
+        },
+        {
+            id: 2,
+            nombre: 'Luna', 
+            edad: 27,
+        },
+        {
+            id: 3,
+            nombre: 'Mariandry', 
+            edad: 24,
+        },
+        {
+            id: 4,
+            nombre: 'Santiago', 
+            edad: 24,
+        },
+        {
+            id: 5,
+            nombre: 'Paola', 
+            edad: 30,
+        },
+    ];
 </script>
 
 <template>
-    <button type="button" v-on:click="toggle">{{ active ? 'Ocultar' : 'Mostrar' }}</button>
-
-    <p v-show="active">
-        Hola mundo
-    </p>
+    <ul>
+        <!-- Cuando se usen CRUDs si no se identifican los items podrá fallar, en ese caso un id es necesario -->
+        <li v-for="alumno in alumnos" :key="alumno.id">
+            {{ alumno.nombre }} - {{ alumno.edad }}
+        </li>
+    </ul>
 </template>
 
 <style scoped>
-    
+
 </style>
