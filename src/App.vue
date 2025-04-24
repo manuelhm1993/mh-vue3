@@ -1,13 +1,16 @@
 <script setup>
-    const getValue = (e) => console.log(e.target.value);
+
 </script>
 
 <template>
-    <!-- El evento siemrpe se recibe en la función manejadora, pero se puede enviar desde el oyente -->
-    <!-- <input type="text" v-on:keyup="getValue"> -->
+    <div @click="console.log('Hiciste click desde el div')">
+        <p>Hazme click</p>
 
-    <!-- Enviando el objeto e (opcional) -->
-    <input type="text" v-on:keyup="getValue($event)">
+        <!-- Evitar la propagación del evento -->
+        <button type="button" @click.stop="console.log('Hiciste click desde el botón')">
+            Hazme click
+        </button>
+    </div>
 </template>
 
 <style scoped>
