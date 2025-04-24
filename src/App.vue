@@ -5,18 +5,22 @@
     // El watch puede ser utilizado tanto con primitivos ref u objetos reactive
     const user = reactive({
         name: 'Manuel',
-        age: 31
+        age: 31,
+        hijo: {
+            name: 'Alucard',
+            age: 1
+        }
     });
 
     // Para que el watch pueda hacer seguimiento de la propiedad requerida debe ser devuelta por un callback
-    watch(() => user.age, (newVal, oldVal) => {
-        console.log(`La edad del usuario cambió cambió: ${oldVal} -> ${newVal}`);
-    });
+    watch(() => user.hijo, (newVal, oldVal) => {
+        console.log(`La edad del usuario cambió cambió: ${oldVal.age} -> ${newVal.age}`);
+    }, { deep: true }); // El tercer parámetro indica que se deben escuchar los cambios de los objetos hijos
 </script>
 
 <template>
-    {{ user.age }}
-    <button type="button" @click="user.age++">+</button>
+    {{ user.hijo.age }}
+    <button type="button" @click="user.hijo.age++">+</button>
 </template>
 
 <style scoped>
