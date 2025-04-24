@@ -11,11 +11,9 @@
 
     <section>
         <form @submit.prevent="">
-            <!-- Toda entrada de datos se considera texto, con el modificador number hace la conversión -->
-            <input type="text" v-model.number="text">
+            <input type="text" v-model.trim="text">
 
-            <!-- Ahora en lugar de concatenar, hará la suma -->
-            <button type="button" @click="console.log(text + 5)">
+            <button type="button" @click="console.log(text)">
                 Mostrar en consola
             </button>
         </form>
