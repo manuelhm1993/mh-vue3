@@ -1,24 +1,24 @@
 <script setup>
     import { ref } from 'vue';
 
-    const estado = ref('Activo');
+    const estado = ref(1);
 </script>
 
 <template>
     <header>
         <h3>Estado seleccionado:</h3>
-        <p>{{ estado }}</p>
+        <p>{{ (estado == 1) ? 'Activo' : 'Inactivo' }}</p>
     </header>
 
     <section>
         <form>
             <label>
-                <input type="radio" value="Activo" v-model="estado">
+                <input type="radio" value="1" v-model="estado" checked>
                 Activo
             </label>
 
             <label>
-                <input type="radio" value="Inactivo" v-model="estado">
+                <input type="radio" value="0" v-model="estado">
                 Inactivo
             </label>
         </form>
