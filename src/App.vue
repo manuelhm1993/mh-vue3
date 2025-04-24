@@ -1,16 +1,19 @@
 <script setup>
-
+    const enviar = (e) => {
+        e.preventDefault();
+        
+        console.log('Enviando');
+    }
 </script>
 
 <template>
-    <div @click="console.log('Hiciste click desde el div')">
-        <p>Hazme click</p>
+    <form @submit="enviar">
+        <input type="text">
 
-        <!-- Evitar la propagación del evento -->
-        <button type="button" @click.stop="console.log('Hiciste click desde el botón')">
-            Hazme click
+        <button type="submit">
+            Enviar
         </button>
-    </div>
+    </form>
 </template>
 
 <style scoped>
