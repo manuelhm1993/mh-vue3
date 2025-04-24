@@ -1,13 +1,13 @@
 <script setup>
-    // Para funciones un poco más complejas, se deben definir en el script y llamarse en el template
-    const saludo = (nombre) => alert(`Hola ${nombre}`);
+    const getValue = (e) => console.log(e.target.value);
 </script>
 
 <template>
-    <!-- Método abreviado -->
-    <button type="button" @click="saludo('Manuel Henriquez')">
-        Haz click
-    </button>
+    <!-- El evento siemrpe se recibe en la función manejadora, pero se puede enviar desde el oyente -->
+    <!-- <input type="text" v-on:keyup="getValue"> -->
+
+    <!-- Enviando el objeto e (opcional) -->
+    <input type="text" v-on:keyup="getValue($event)">
 </template>
 
 <style scoped>
