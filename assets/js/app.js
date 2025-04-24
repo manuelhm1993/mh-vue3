@@ -1,10 +1,5 @@
-let nombre = 'Manuel'; // Alcance global
+const g = 9.81;
 
-if(true) 
-{
-    let nombre = 'Alejandro'; // Alcance local
-    
-    console.log(nombre);
-}
+// g = 10; // Las constantes no pueden ser reasignadas, esto da error y respeta el ámbito como let
 
-console.log(nombre);
+console.log(g);
