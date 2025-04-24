@@ -1,26 +1,24 @@
 <script setup>
     import { ref } from 'vue';
 
-    const estado = ref(1);
+    const pais = ref('');
 </script>
 
 <template>
     <header>
-        <h3>Estado seleccionado:</h3>
-        <p>{{ (estado == 1) ? 'Activo' : 'Inactivo' }}</p>
+        <h3>Paises:</h3>
+        <p>{{ pais }}</p>
     </header>
 
     <section>
         <form>
-            <label>
-                <input type="radio" value="1" v-model="estado" checked>
-                Activo
-            </label>
-
-            <label>
-                <input type="radio" value="0" v-model="estado">
-                Inactivo
-            </label>
+            <select v-model="pais">
+                <option value="">Seleccione un país</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Chile">Chile</option>
+                <option value="Perú">Perú</option>
+            </select>
         </form>
     </section>
 </template>
