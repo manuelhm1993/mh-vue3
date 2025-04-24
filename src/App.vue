@@ -1,24 +1,19 @@
 <script setup>
     import { ref } from 'vue';
 
-    const pais = ref('');
+    const text = ref('');
 </script>
 
 <template>
     <header>
-        <h3>Paises:</h3>
-        <p>{{ pais }}</p>
+        <h3>Mensaje:</h3>
+        <p>{{ text }}</p>
     </header>
 
     <section>
-        <form>
-            <select v-model="pais">
-                <option value="">Seleccione un país</option>
-                <option value="Venezuela">Venezuela</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Chile">Chile</option>
-                <option value="Perú">Perú</option>
-            </select>
+        <form @submit.prevent="">
+            <!-- El modificador lazy actualiza la propiedad al perder el foco -->
+            <input type="text" v-model.lazy="text">
         </form>
     </section>
 </template>
