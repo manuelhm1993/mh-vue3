@@ -1,18 +1,22 @@
 <script setup>
     // Los whatches son funciones que se ejecutan cuando las propiedades reactivas cambian
-    import { ref, watch } from 'vue';
+    import { ref, reactive, watch } from 'vue';
 
-    const cont = ref(0);
+    // El watch puede ser utilizado tanto con primitivos ref u objetos reactive
+    const user = reactive({
+        name: 'Manuel',
+        age: 31
+    });
 
-    // El watch es lo mismo que un observer, estará a la escucha de un cambio sobre una propiedad
-    watch(cont, (newVal, oldVal) => {
-        console.log(`La variable cont cambió: ${oldVal} -> ${newVal}`);
+    // Para que el watch pueda hacer seguimiento de la propiedad requerida debe ser devuelta por un callback
+    watch(() => user.age, (newVal, oldVal) => {
+        console.log(`La edad del usuario cambió cambió: ${oldVal} -> ${newVal}`);
     });
 </script>
 
 <template>
-    {{ cont }}
-    <button type="button" @click="cont++">+</button>
+    {{ user.age }}
+    <button type="button" @click="user.age++">+</button>
 </template>
 
 <style scoped>
