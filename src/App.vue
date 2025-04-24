@@ -1,13 +1,11 @@
 <script setup>
-    
+    // Para funciones un poco más complejas, se deben definir en el script y llamarse en el template
+    const saludo = () => alert('Hola desde vue');
 </script>
 
 <template>
-    <!-- Forma básica de manejar eventos -->
-    <!-- <button type="button" v-on:click="console.log('Hola desde vue')"> -->
-    
     <!-- Método abreviado -->
-    <button type="button" @click="console.log('Hola desde vue')">
+    <button type="button" @click="saludo">
         Haz click
     </button>
 </template>
