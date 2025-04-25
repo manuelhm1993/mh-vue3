@@ -16,11 +16,15 @@
     </button>
 
     <!-- Forma de vincular clases a través de arrays -->
-    <p :class="[ bg ? 'bg-red' : '' ]">Hola mundo</p>
+    <p :class="[ bg ? 'bg-red' : 'bg-blue' ]">Hola mundo</p>
 </template>
 
 <style scoped>
     .bg-red {
         background-color: red;
+    }
+
+    .bg-blue {
+        background-color: blue;
     }
 </style>
