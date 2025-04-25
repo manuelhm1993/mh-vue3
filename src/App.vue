@@ -1,13 +1,23 @@
 <script setup>
-    const msg = 'Hola mundo';
+    import { ref } from 'vue';
+
+    const bg = ref('');
+
+    const pintar = (e) => {
+        bg.value = (bg.value === '') ? 'bg-red' : '';
+    };
 </script>
 
 <template>
-    <h1>{{ msg }}</h1>
+    <button @click="pintar">
+        Pintar
+    </button>
+
+    <p :class="bg">Hola mundo</p>
 </template>
 
 <style scoped>
-    h1 {
-        color: red;
+    .bg-red {
+        background-color: red;
     }
 </style>
