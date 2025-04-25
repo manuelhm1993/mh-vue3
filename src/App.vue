@@ -1,7 +1,9 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref, computed } from 'vue';
 
     const bg = ref('');
+
+    const msg = computed(() => (bg.value === '') ? 'Pintar' : 'Restaurar');
 
     const pintar = (e) => {
         bg.value = (bg.value === '') ? 'bg-red' : '';
@@ -10,7 +12,7 @@
 
 <template>
     <button @click="pintar">
-        Pintar
+        {{ msg }}
     </button>
 
     <p :class="bg">Hola mundo</p>
