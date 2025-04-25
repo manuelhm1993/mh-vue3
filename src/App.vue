@@ -1,18 +1,13 @@
 <script setup>
-    import { ref, watch } from 'vue';
-
-    const cont = ref(0);
-
-    watch(cont, (newVal, oldVal) => {
-        console.log(`La variable cont cambió: ${oldVal} -> ${newVal}`);
-    }, { immediate: true }); // Si se desea que el watch se ejecute al cargar se usa immediate
+    const msg = 'Hola mundo';
 </script>
 
 <template>
-    {{ cont }}
-    <button type="button" @click="cont++">+</button>
+    <h1>{{ msg }}</h1>
 </template>
 
 <style scoped>
-
+    h1 {
+        color: red;
+    }
 </style>
