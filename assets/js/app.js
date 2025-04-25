@@ -17,8 +17,8 @@ const data = [
     }
 ];
 
-// Obtener los resultados de forma síncrona
-const getData = () => data;
+// Obtener los resultados de forma asíncrona
+const getData = () => setTimeout(() => data, 2000);
 
 const response = getData();
 
