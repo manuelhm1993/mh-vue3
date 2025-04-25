@@ -1,18 +1,46 @@
-// Declaración de un objeto
-const usuario = {
-    nombre: "Manuel",
-    apellido: "Henriquez",
-    edad: 31,
-    mascotas: ['Perro', 'Gato', 'Conejo']
-}; 
+// Simulación de consulta a una API
+const data = [
+    {
+        id: 1,
+        name: "Manuel",
+        age: 31
+    },
+    {
+        id: 2,
+        name: "Luna",
+        age: 27
+    },
+    {
+        id: 3,
+        name: "Paola",
+        age: 30
+    }
+];
 
-// Destructuración de objetos
-const { nombre, apellido, edad, mascotas } = usuario;
+// Obtener los resultados de forma asíncrona
+const getData = () => {
+    // Las promesas esperan a que termine el proceso para luego ejecutar una acción
+    return new Promise((resolve, reject) => {
+        // Resolve indica que la promesa a concluido su ejecución y reject indica que ocurrió un error
+        setTimeout(() => (true) ? resolve(data) : reject('Error. No se pudo acceder a la data'), 2000);
+    });
+};
 
-console.log(nombre);
-console.log(apellido);
-console.log(edad);
-console.log(mascotas);
+// Simulación de fetch: async indica que la función es asíncrona
+(async () => {
+    // Se usa try-catch para manejar los errores
+    try {
+        // Se usa await para recuperar el valor de la promesa una vez resuelta
+        const res = await getData();
 
-// El objeto no pierde sus propiedades al destructurar, simplemente copia sus propiedades en variables
-console.log(usuario);
+        // Se imprime el valor
+        console.log(res);
+    } 
+    catch (error) {
+        // Se imprime el error
+        console.log(error);
+    }
+})(); // Función anónima auto-invocada - IIFE - Expresión de función ejecutada inmediatamente
+
+// Resto del flujo de ejecución
+console.log('Continúa el programa');
