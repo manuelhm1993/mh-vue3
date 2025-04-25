@@ -1,12 +1,12 @@
 <script setup>
     import { ref, computed } from 'vue';
 
-    const bg = ref('');
+    const bg = ref(false);
 
-    const msg = computed(() => (bg.value === '') ? 'Pintar' : 'Restaurar');
+    const msg = computed(() => (!bg.value) ? 'Pintar' : 'Restaurar');
 
     const pintar = (e) => {
-        bg.value = (bg.value === '') ? 'bg-red' : '';
+        bg.value = !bg.value;
     };
 </script>
 
@@ -15,7 +15,8 @@
         {{ msg }}
     </button>
 
-    <p :class="bg">Hola mundo</p>
+    <!-- Forma de vincular clases a través de objetos -->
+    <p :class="{ 'bg-red': bg }">Hola mundo</p>
 </template>
 
 <style scoped>
