@@ -1,18 +1,25 @@
-// Declaración de un objeto
-const usuario = {
-    nombre: "Manuel",
-    apellido: "Henriquez",
-    edad: 31,
-    mascotas: ['Perro', 'Gato', 'Conejo']
-}; 
+// Simulación de consulta a una API
+const data = [
+    {
+        id: 1,
+        name: "Manuel",
+        age: 31
+    },
+    {
+        id: 2,
+        name: "Luna",
+        age: 27
+    },
+    {
+        id: 3,
+        name: "Paola",
+        age: 30
+    }
+];
 
-// Destructuración de objetos
-const { nombre, apellido, edad, mascotas } = usuario;
+// Obtener los resultados de forma síncrona
+const getData = () => data;
 
-console.log(nombre);
-console.log(apellido);
-console.log(edad);
-console.log(mascotas);
+const response = getData();
 
-// El objeto no pierde sus propiedades al destructurar, simplemente copia sus propiedades en variables
-console.log(usuario);
+console.log(response);
