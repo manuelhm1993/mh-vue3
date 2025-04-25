@@ -15,8 +15,8 @@
         {{ msg }}
     </button>
 
-    <!-- Forma de vincular clases a través de objetos -->
-    <p :class="{ 'bg-red': bg }">Hola mundo</p>
+    <!-- Forma de vincular clases a través de arrays -->
+    <p :class="[ bg ? 'bg-red' : '' ]">Hola mundo</p>
 </template>
 
 <style scoped>
