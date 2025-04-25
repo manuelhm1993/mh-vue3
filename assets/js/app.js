@@ -1,13 +1,12 @@
 // Declaración de función clásica
-function nombre() {
-    console.log("Manuel Henriquez");
-}
+const nombre = "Manuel";
+const apellido = "Henriquez";
+const edad = 31;
 
-// Funciones flecha
-const nombre2 = () => {
-    console.log("Manuel");
-};
+// Concatenación clásica
+let data = "Hola, mi nombre es " + nombre + " " + apellido + " y mi edad es " + edad;
 
-// Su funcionamiento es el mismo, pero la sintaxis más moderna es la de funciones flecha
-nombre();
-nombre2();
+// Uso de template strings
+data = `Hola, mi nombre es ${nombre} ${apellido} y mi edad es ${edad}`;
+
+console.log(data);
