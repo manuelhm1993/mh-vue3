@@ -1,5 +1,13 @@
-const g = 9.81;
+// Declaración de función clásica
+function nombre() {
+    console.log("Manuel Henriquez");
+}
 
-// g = 10; // Las constantes no pueden ser reasignadas, esto da error y respeta el ámbito como let
+// Funciones flecha
+const nombre2 = () => {
+    console.log("Manuel");
+};
 
-console.log(g);
+// Su funcionamiento es el mismo, pero la sintaxis más moderna es la de funciones flecha
+nombre();
+nombre2();
