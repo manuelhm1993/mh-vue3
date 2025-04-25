@@ -1,18 +1,34 @@
 <script setup>
-    import { ref, watch } from 'vue';
+    import { ref, computed } from 'vue';
 
-    const cont = ref(0);
+    const bg = ref(false);
 
-    watch(cont, (newVal, oldVal) => {
-        console.log(`La variable cont cambió: ${oldVal} -> ${newVal}`);
-    }, { immediate: true }); // Si se desea que el watch se ejecute al cargar se usa immediate
+    const msg = computed(() => (!bg.value) ? 'Rojo' : 'Azul');
+
+    const pintar = (e) => {
+        bg.value = !bg.value;
+    };
 </script>
 
 <template>
-    {{ cont }}
-    <button type="button" @click="cont++">+</button>
+    <button @click="pintar">
+        {{ msg }}
+    </button>
+
+    <!-- Forma de vincular clases a través de arrays -->
+    <p :class="[ ((bg) ? 'bg-red' : 'bg-blue'), 'text-white' ]">Hola mundo</p>
 </template>
 
 <style scoped>
+    .bg-red {
+        background-color: red;
+    }
 
+    .bg-blue {
+        background-color: blue;
+    }
+
+    .text-white {
+        color: white;
+    }
 </style>
