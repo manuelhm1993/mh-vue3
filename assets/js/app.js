@@ -6,16 +6,13 @@ const usuario = {
     mascotas: ['Perro', 'Gato', 'Conejo']
 }; 
 
-// Accediento a las propiedades del objeto
-let data = `Hola, mi nombre es ${usuario.nombre} ${usuario.apellido} y mi edad es ${usuario.edad}`;
+// Destructuración de objetos
+const { nombre, apellido, edad, mascotas } = usuario;
 
-console.log(data);
+console.log(nombre);
+console.log(apellido);
+console.log(edad);
+console.log(mascotas);
 
-// Asignando una propiedad nueva al objeto dinámicamente
-usuario.id = '0000000001';
-
-// Reasignando el valor de la propiedad nombre
-usuario.nombre = "Manuel A.";
-
-// Imprimir el objeto
+// El objeto no pierde sus propiedades al destructurar, simplemente copia sus propiedades en variables
 console.log(usuario);
