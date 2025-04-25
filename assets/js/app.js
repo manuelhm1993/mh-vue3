@@ -21,15 +21,16 @@ const data = [
 const getData = () => {
     // Las promesas esperan a que termine el proceso para luego ejecutar una acción
     return new Promise((resolve, reject) => {
-        // Resolve indica que la promesa a concluido su ejecución
-        setTimeout(() => resolve(data), 2000);
+        // Resolve indica que la promesa a concluido su ejecución y reject indica que ocurrió un error
+        setTimeout(() => (!true) ? resolve(data) : reject('Error. No se pudo acceder a la data'), 2000);
     });
 };
 
+// Recuperar la data en una promesa
 const response = getData();
 
-// Recuperar el valor de la promesa esperando que retorne su ejecución
-response.then(data => console.log(data));
+// El método then permite recuperar el valor de la promesa y catch captura una excepción
+response.then(data => console.log(data)).catch(e => console.log(e));
 
 // Resto del flujo de ejecución
 console.log('Continúa el programa');
