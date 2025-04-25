@@ -18,8 +18,18 @@ const data = [
 ];
 
 // Obtener los resultados de forma asíncrona
-const getData = () => setTimeout(() => data, 2000);
+const getData = () => {
+    // Las promesas esperan a que termine el proceso para luego ejecutar una acción
+    return new Promise((resolve, reject) => {
+        // Resolve indica que la promesa a concluido su ejecución
+        setTimeout(() => resolve(data), 2000);
+    });
+};
 
 const response = getData();
 
-console.log(response);
+// Recuperar el valor de la promesa esperando que retorne su ejecución
+response.then(data => console.log(data));
+
+// Resto del flujo de ejecución
+console.log('Continúa el programa');
