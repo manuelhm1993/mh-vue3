@@ -1,34 +1,31 @@
 <script setup>
-    import { ref, computed } from 'vue';
+    import { reactive } from 'vue';
 
-    const bg = ref(false);
+    const paises = reactive([]);
 
-    const msg = computed(() => (!bg.value) ? 'Rojo' : 'Azul');
+    const agregarPais = (e) => {
+        const form = e.target;
 
-    const pintar = (e) => {
-        bg.value = !bg.value;
+        paises.push(form[0].value);
+
+        form.reset();
     };
 </script>
 
 <template>
-    <button @click="pintar">
-        {{ msg }}
-    </button>
+    <form @submit.prevent="agregarPais">
+        <input type="text" required>
+        <button type="submit">Guardar</button>
+    </form>
 
-    <!-- Forma de vincular clases a través de arrays -->
-    <p :class="[ ((bg) ? 'bg-red' : 'bg-blue'), 'text-white' ]">Hola mundo</p>
+    <h3 v-if="paises.length > 0">Paises</h3>
+
+    <ul>
+        <!-- Importante agregar el key a la lista de items para hacer un seguimiento correcto de vue -->
+        <li v-for="(pais, i) in paises" :key="i">{{ pais }}</li>
+    </ul>
 </template>
 
 <style scoped>
-    .bg-red {
-        background-color: red;
-    }
 
-    .bg-blue {
-        background-color: blue;
-    }
-
-    .text-white {
-        color: white;
-    }
 </style>
