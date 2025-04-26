@@ -1,29 +1,11 @@
 <script setup>
-    import { reactive } from 'vue';
-
-    const paises = reactive([]);
-
-    const agregarPais = (e) => {
-        const form = e.target;
-
-        paises.push(form[0].value);
-
-        form.reset();
-    };
+    // Para llamar a un componente se debe importar como cualquier método o clase
+    import MyComponente from './components/MyComponente.vue';
 </script>
 
 <template>
-    <form @submit.prevent="agregarPais">
-        <input type="text" required>
-        <button type="submit">Guardar</button>
-    </form>
-
-    <h3 v-if="paises.length > 0">Paises</h3>
-
-    <ul>
-        <!-- Importante agregar el key a la lista de items para hacer un seguimiento correcto de vue -->
-        <li v-for="(pais, i) in paises" :key="i">{{ pais }}</li>
-    </ul>
+    <!-- El componente se invoca acomo cualquier etiqueta, puede ser con autocierre o con apertura y cierre -->
+    <MyComponente />
 </template>
 
 <style scoped>
