@@ -2,7 +2,11 @@
     // Validaciones a los props
     const { course, prueba } = defineProps({
         course: Object, // Esto indica que una variable debe ser de un tipo específico
-        prueba: [String, Number] // Esto indica que se puede recibir datos tipo numérico y strings
+        prueba: {
+            type: Number, //Para pasar más de una validación se usa un objeto
+            //required: true,
+            default: 0
+        }
     });
 </script>
 
