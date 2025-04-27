@@ -31,7 +31,7 @@
     <template v-for="course in courses">
         <!-- Si el atributo se llama igual que la variable, se puede simplificar la llamada :cont -->
         <DetailCourse :course="course" :cont
-            v-model="cont"
+            v-model:cont="cont"
         /> <!-- Para enlazar un objeto del componente padre con el componente hijo se puede usar v-model -->
     </template>
 </template>
