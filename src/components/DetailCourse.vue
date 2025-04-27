@@ -1,23 +1,20 @@
 <script setup>
-    // Validaciones a los props
-    const { course, prueba } = defineProps({
-        course: Object, // Esto indica que una variable debe ser de un tipo específico
-        prueba: {
-            type: Number, //Para pasar más de una validación se usa un objeto
-            //required: true,
+    const { course, cont } = defineProps({
+        course: Object,
+        cont: {
+            type: Number,
             default: 0
-        },
-        disabled: Boolean
+        }
     });
 </script>
 
 <template>
-    <!-- Luego de recibir la información, se puede interpolar como variables normales -->
-    <h2>{{ course.title }} - {{ prueba }}</h2>
+    <h2>{{ course.title }} - {{ cont }}</h2>
     <p>Profesor: {{ course.teacher }}</p>
     <p>Costo: ${{ course.price }}</p>
 
-    <button type="button" :disabled>
+    <!-- Para afectar objetos del componente padre es necesario emitir eventos desde el componente hijo -->
+    <button type="button" @click="$emit('decrementarCont')">
         Hazme click
     </button>
 </template>
