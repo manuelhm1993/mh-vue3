@@ -14,7 +14,7 @@
     <p>Costo: ${{ course.price }}</p>
 
     <!-- Para afectar objetos del componente padre es necesario emitir eventos desde el componente hijo -->
-    <button type="button" @click="$emit('decrementarCont')">
+    <button type="button" @click="$emit('decrementarCont', 2)">
         Hazme click
     </button>
 </template>

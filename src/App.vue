@@ -23,6 +23,9 @@
     ];
 
     const cont = ref(5);
+
+    // Emit pasará en orden los parámetros a la función manejadora
+    const decrementar = (i) => cont.value -= i;
 </script>
 
 <template>
@@ -33,7 +36,7 @@
         <DetailCourse 
             :course="course" 
             :cont 
-            @decrementarCont="cont--"
+            @decrementarCont="decrementar"
         />  <!-- Un evento emitido o personalizado se escucha igual que un evento normal -->
     </template>
 </template>
