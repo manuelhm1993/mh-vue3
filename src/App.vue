@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <AlertComponent />
+    <AlertComponent type="info" />
     <DarkModeComponent />
 </template>
 
