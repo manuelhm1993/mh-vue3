@@ -1,13 +1,16 @@
 <script setup>
-    import MyComponente from './components/MyComponente.vue';
+    import DetailCourse from './components/DetailCourse.vue';
+
+    const course = {
+        title: 'Vue desde cero',
+        professor: 'Manuel Henriquez',
+        price: 10
+    };
 </script>
 
 <template>
-    <!-- El componente se invoca acomo cualquier etiqueta, puede ser con autocierre o con apertura y cierre -->
-    <template v-for="i in 4">
-        <MyComponente />
-        <br>
-    </template>
+    <!-- Para pasarle información adicional al componente se usan atributos con nombre -->
+    <DetailCourse course="Vue desde cero" />
 </template>
 
 <style scoped>
