@@ -23,9 +23,6 @@
     ];
 
     const cont = ref(5);
-
-    // Emit pasará en orden los parámetros a la función manejadora
-    const decrementar = (i) => cont.value -= i;
 </script>
 
 <template>
@@ -33,11 +30,9 @@
     
     <template v-for="course in courses">
         <!-- Si el atributo se llama igual que la variable, se puede simplificar la llamada :cont -->
-        <DetailCourse 
-            :course="course" 
-            :cont 
-            @decrementarCont="decrementar"
-        />  <!-- Un evento emitido o personalizado se escucha igual que un evento normal -->
+        <DetailCourse :course="course" :cont
+            v-model:cont="cont"
+        /> <!-- Para enlazar un objeto del componente padre con el componente hijo se puede usar v-model -->
     </template>
 </template>
 
