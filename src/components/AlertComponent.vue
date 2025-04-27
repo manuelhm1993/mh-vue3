@@ -31,7 +31,9 @@
     <div :class="alertColor" class="p-4 mb-4 text-sm rounded-lg" role="alert">
         <span class="font-medium">Info alert!</span> 
         <!-- Los slots son contenido extra y variable que se puede pasar a los componentes en lugar de atributos -->
-        <slot></slot>
+        <slot>
+            Contenido de respaldo
+        </slot>
     </div>
 </template>
 
