@@ -23,6 +23,7 @@
     ];
 
     const prueba = ref(5);
+    const disabled = true;
 </script>
 
 <template>
@@ -31,7 +32,7 @@
     <!-- Se llama al componente variando la información enviada -->
     <template v-for="course in courses">
         <!-- Si el atributo se llama igual que la variable, se puede simplificar la llamada :prueba -->
-        <DetailCourse :course="course" :prueba />
+        <DetailCourse :course="course" :prueba :disabled />
     </template>
 </template>
 
