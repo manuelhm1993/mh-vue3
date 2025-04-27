@@ -1,4 +1,5 @@
 <script setup>
+    import { ref } from 'vue';
     import DetailCourse from './components/DetailCourse.vue';
 
     // Data simulada de una API
@@ -20,13 +21,17 @@
             "price": 30
         },
     ];
+
+    const prueba = ref('Hola mundo');
 </script>
 
 <template>
+    <input type="text" v-model="prueba">
+    
     <!-- Se llama al componente variando la información enviada -->
     <template v-for="course in courses">
-        <!-- En caso que sea una variable y no un valor literal, el atributo debe llevar : como sufijo -->
-        <DetailCourse :course="course" prueba="Hola mundo" />
+        <!-- Si el atributo se llama igual que la variable, se puede simplificar la llamada :prueba -->
+        <DetailCourse :course="course" :prueba />
     </template>
 </template>
 
