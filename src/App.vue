@@ -26,7 +26,7 @@
     <!-- Se llama al componente variando la información enviada -->
     <template v-for="course in courses">
         <!-- En caso que sea una variable y no un valor literal, el atributo debe llevar : como sufijo -->
-        <DetailCourse :course="course" />
+        <DetailCourse :course="course" prueba="Hola mundo" />
     </template>
 </template>
 

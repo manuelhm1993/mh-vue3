@@ -1,10 +1,12 @@
 <script setup>
     // Los datos adicionales que se envían al componente se reciben desde el script
-    const props = defineProps([
-        'course'
+    const { course, prueba } = defineProps([
+        'course', 'prueba'
     ]);
 
-    console.log(props.course);
+    // console.log(props.prueba);
+    // Para evitar acceder al objeto props, se puede destructurar el objeto en variables
+    console.log(prueba);
 </script>
 
 <template>
