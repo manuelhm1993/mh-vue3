@@ -29,8 +29,12 @@
 <template>
     <!-- Luego de usar el lookup table se vincula la const alertColor con v-bind:class o :class  -->
     <div :class="alertColor" class="p-4 mb-4 text-sm rounded-lg" role="alert">
-        <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+        <span class="font-medium">Info alert!</span> 
+        <!-- Los slots son contenido extra y variable que se puede pasar a los componentes en lugar de atributos -->
+        <slot></slot>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

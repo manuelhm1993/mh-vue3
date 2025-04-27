@@ -4,7 +4,11 @@
 </script>
 
 <template>
-    <AlertComponent type="danger" />
+    <!-- Para cargar el slot se debe usar apertura y cierre de etiqueta -->
+    <AlertComponent type="danger">
+        Hola desde el alert
+    </AlertComponent>
+    
     <DarkModeComponent />
 </template>
 
