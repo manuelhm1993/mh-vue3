@@ -1,9 +1,10 @@
 <script setup>
-    import OneComponent from './components/provide-inject/OneComponent.vue';
+    
 </script>
 
 <template>
-    <OneComponent />
+    <!-- Se puede llamar a un componente usando kebab case, aquí se reinderizarán las vistas -->
+    <router-view />
 </template>
 
 <style scoped>

@@ -3,4 +3,8 @@ import './assets/css/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import router from './router' //Importar el router
+
+createApp(App)
+    .use(router) // Indicar que se usará el documento de rutas o enrutador
+    .mount('#app')
