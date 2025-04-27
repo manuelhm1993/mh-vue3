@@ -1,5 +1,7 @@
 <script setup>
     import { ref } from 'vue';
+
+    // Define los enlaces dinámicos para las vistas sin recargar
     import { RouterLink } from 'vue-router';
 
     // Variable para controlar el estado del menú
