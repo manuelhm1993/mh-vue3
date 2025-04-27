@@ -22,7 +22,7 @@
         },
     ];
 
-    const prueba = ref('Hola mundo');
+    const prueba = ref(5);
 </script>
 
 <template>
