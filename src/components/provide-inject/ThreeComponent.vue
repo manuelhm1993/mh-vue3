@@ -1,5 +1,5 @@
 <script setup>
-    
+    const { nombre } = defineProps(['nombre']);
 </script>
 
 <template>
@@ -7,6 +7,8 @@
         <p class="text-2xl">
             Hola desde el componente 3
         </p>
+
+        <p>{{ nombre }}</p>
     </div>
 </template>
 

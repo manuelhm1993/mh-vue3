@@ -1,6 +1,8 @@
 <script setup>
+    import { ref } from 'vue';
     import TwoComponent from './TwoComponent.vue';
 
+    const nombre = ref('Manuel');
 </script>
 
 <template>
@@ -9,7 +11,7 @@
             Hola desde el componente 1
         </p>
 
-        <TwoComponent />
+        <TwoComponent :nombre="nombre" />
     </div>
 </template>
 
