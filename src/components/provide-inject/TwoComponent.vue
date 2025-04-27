@@ -1,7 +1,5 @@
 <script setup>
     import ThreeComponent from './ThreeComponent.vue';
-
-    const { nombre } = defineProps(['nombre']);
 </script>
 
 <template>
@@ -10,7 +8,7 @@
             Hola desde el componente 2
         </p>
 
-        <ThreeComponent :nombre />
+        <ThreeComponent />
     </div>
 </template>
 

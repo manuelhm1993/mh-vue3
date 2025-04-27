@@ -1,5 +1,9 @@
 <script setup>
-    const { nombre } = defineProps(['nombre']);
+    // Permite la inyección de dependencias, un equivalente al model binding de laravel
+    import { inject } from 'vue';
+
+    // Se crea una constante o variable que almacenará la variable que se inyecta
+    const nombre = inject('nombre');
 </script>
 
 <template>
@@ -8,7 +12,9 @@
             Hola desde el componente 3
         </p>
 
-        <p>{{ nombre }}</p>
+        <p>
+            {{ nombre }}
+        </p>
     </div>
 </template>
 
