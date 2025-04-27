@@ -1,23 +1,27 @@
 <script setup>
-    // Validaciones a los props
-    const { course, prueba } = defineProps({
-        course: Object, // Esto indica que una variable debe ser de un tipo específico
-        prueba: {
-            type: Number, //Para pasar más de una validación se usa un objeto
-            //required: true,
+    // Definit el objeto emisor de eventos personalizados (forma correcta de hacerlo)
+    const emit = defineEmits(['decrementarCont']);
+
+    // Definir o recuperar las variables 
+    const { course, cont } = defineProps({
+        course: Object,
+        cont: {
+            type: Number,
             default: 0
-        },
-        disabled: Boolean
+        }
     });
+
+    // Función para emitir un evento
+    const buttonClick = () => emit('decrementarCont', 2);
 </script>
 
 <template>
-    <!-- Luego de recibir la información, se puede interpolar como variables normales -->
-    <h2>{{ course.title }} - {{ prueba }}</h2>
+    <h2>{{ course.title }} ({{ cont }})</h2>
     <p>Profesor: {{ course.teacher }}</p>
     <p>Costo: ${{ course.price }}</p>
 
-    <button type="button" :disabled>
+    <!-- Se puede emitir un evento desde una función manejadora -->
+    <button type="button" @click="buttonClick">
         Hazme click
     </button>
 </template>

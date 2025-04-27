@@ -22,17 +22,22 @@
         },
     ];
 
-    const prueba = ref(5);
-    const disabled = true;
+    const cont = ref(5);
+
+    // Emit pasará en orden los parámetros a la función manejadora
+    const decrementar = (i) => cont.value -= i;
 </script>
 
 <template>
-    <input type="text" v-model="prueba">
+    <input type="text" v-model.number="cont">
     
-    <!-- Se llama al componente variando la información enviada -->
     <template v-for="course in courses">
-        <!-- Si el atributo se llama igual que la variable, se puede simplificar la llamada :prueba -->
-        <DetailCourse :course="course" :prueba :disabled />
+        <!-- Si el atributo se llama igual que la variable, se puede simplificar la llamada :cont -->
+        <DetailCourse 
+            :course="course" 
+            :cont 
+            @decrementarCont="decrementar"
+        />  <!-- Un evento emitido o personalizado se escucha igual que un evento normal -->
     </template>
 </template>
 
