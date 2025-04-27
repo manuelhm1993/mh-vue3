@@ -5,14 +5,21 @@
     });
 
     // Recibir el enlace de v-model del componente padre (activa el enlace bidireccional)
-    const cont = defineModel();
+    const cont = defineModel({
+        type: Number,
+        default: 0
+    });
 
     // Una vez recibido como modelo el objeto cont, se puede modificar directamente en el componente hijo
     const buttonClick = (e) => cont.value--;
 </script>
 
 <template>
-    <h2>{{ course.title }} ({{ cont }})</h2>
+    <h2>
+        {{ course.title }}
+        <input type="text" v-model.number="cont">
+    </h2>
+
     <p>Profesor: {{ course.teacher }}</p>
     <p>Costo: ${{ course.price }}</p>
 
