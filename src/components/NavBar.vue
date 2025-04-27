@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue';
+    import { RouterLink } from 'vue-router';
 
     // Variable para controlar el estado del menú
     const isOpen = ref(false);
@@ -15,10 +16,10 @@
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
-            <router-link to="/">
+            <RouterLink to="/">
                 <img src="/logo.jpg" class="h-8" alt="MHenriquez Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MHenriquez</span>
-            </router-link>
+            </RouterLink>
 
             <!-- Botón Hamburguesa -->
             <button @click="toggleMenu" type="button"
@@ -38,19 +39,19 @@
         md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 
         md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <router-link to="/" v-slot="{ isActive }">
+                        <RouterLink to="/" v-slot="{ isActive }">
                             <span :class="activeMenu(isActive)">
                                 Inicio
                             </span>
-                        </router-link>
+                        </RouterLink>
                     </li>
 
                     <li>
-                        <router-link to="/about" v-slot="{ isActive }">
+                        <RouterLink to="/about" v-slot="{ isActive }">
                             <span :class="activeMenu(isActive)">
                                 Acerca de
                             </span>
-                        </router-link>
+                        </RouterLink>
                     </li>
                 </ul>
             </div>

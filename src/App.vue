@@ -1,10 +1,11 @@
 <script setup>
-    
+    // Para usar la sintaxis CamelCase se deben importar los componentes
+    import { RouterView } from 'vue-router';
 </script>
 
 <template>
-    <!-- Se puede llamar a un componente usando kebab case, aquí se reinderizarán las vistas -->
-    <router-view />
+    <!-- Componente que permite renderizar la vista activa -->
+    <RouterView />
 </template>
 
 <style scoped>
