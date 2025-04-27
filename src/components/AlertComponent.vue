@@ -29,7 +29,8 @@
 <template>
     <!-- Luego de usar el lookup table se vincula la const alertColor con v-bind:class o :class  -->
     <div :class="alertColor" class="p-4 mb-4 text-sm rounded-lg" role="alert">
-        <span class="font-medium">
+        <!-- Los slots se almacenan dentro del objeto $slots y se puede consultar por ellos -->
+        <span class="font-medium" v-if="$slots.title">
             <!-- Si se usa más de un slot, el principal será el que no tiene el atributo name -->
             <slot name="title">
                 Info alert!
