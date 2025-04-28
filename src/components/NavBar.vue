@@ -58,7 +58,7 @@
                     </li>
 
                     <li>
-                        <RouterLink :to="{ name: 'courses' }" v-slot="{ isActive }">
+                        <RouterLink :to="{ name: 'courses-index' }" v-slot="{ isActive }">
                             <span :class="activeMenu(isActive)">
                                 Cursos
                             </span>

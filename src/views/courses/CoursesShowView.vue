@@ -9,14 +9,14 @@
     const route = useRoute();
 
     // Obtener el id de la ruta
-    const courses = computed(() => route.params.courses);
+    const courseId = computed(() => route.params.courseId);
 </script>
 
 <template>
     <MainComponent>
-        <h1 class="mb-8 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Bienvenido al curso: {{ courses }}
+        <h1 class="mb-8 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Bienvenido al curso: {{ courseId }}
             <!-- Recuperar el parámetro desde el template -->
-            <!-- {{ $route.params.courses }} -->
+            <!-- {{ $route.params.courseId }} -->
         </h1>
 
         <section>

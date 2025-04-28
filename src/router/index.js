@@ -16,14 +16,19 @@ const routes = [
         component: () => import('@/views/AboutView.vue') // Importar los componentes en modo lazy loader
     },
     {
-        path: "/cursos",
-        name: "courses",
-        component: () => import("@/views/courses/CoursesView.vue")
-    },
-    {
-        path: "/cursos/:courses(\\d+)",
-        name: "courses.show",
-        component: () => import("@/views/courses/CoursesShowView.vue")
+        path: '/cursos', //Equivalente a grupos en laravel
+        children: [
+            {
+                path: "",
+                name: "courses-index",
+                component: () => import("@/views/courses/CoursesView.vue")
+            },
+            {
+                path: ":courseId(\\d+)",
+                name: "courses-show",
+                component: () => import("@/views/courses/CoursesShowView.vue")
+            }
+        ]
     },
     // La ruta de manejo de errores siempre va al final
     { 
