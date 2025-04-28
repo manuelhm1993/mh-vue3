@@ -14,6 +14,16 @@ const routes = [
         path: "/about", 
         name: "about", 
         component: () => import('@/views/AboutView.vue') // Importar los componentes en modo lazy loader
+    },
+    {
+        path: "/courses",
+        name: "courses",
+        component: () => import("@/views/courses/CoursesView.vue")
+    },
+    {
+        path: "/courses/:courseId", // Indicar que la ruta recibe un parámetro (igual que laravel)
+        name: "courses.show",
+        component: () => import("@/views/courses/CoursesShowView.vue")
     }
 ];
 
