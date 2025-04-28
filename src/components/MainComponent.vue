@@ -8,11 +8,11 @@
         <NavBar />
     </header>
 
-    <main class="max-w-screen-xl flex flex-wrap mx-auto p-4">
+    <main class="container">
         <slot></slot>
     </main>
 
-    <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
+    <footer class="container">
         <FooterComponent />
     </footer>
 </template>
