@@ -24,6 +24,12 @@ const routes = [
         path: "/cursos/:courses(\\d+)",
         name: "courses.show",
         component: () => import("@/views/courses/CoursesShowView.vue")
+    },
+    // La ruta de manejo de errores siempre va al final
+    { 
+        path: '/:pathMatch(.*)*', 
+        name: 'NotFound', 
+        component: () => import('@/components/NotFound.vue') 
     }
 ];
 
