@@ -21,7 +21,7 @@ const routes = [
         component: () => import("@/views/courses/CoursesView.vue")
     },
     {
-        path: "/courses/:courses(\\d+)+", // Indicar que pueden repetirse los parámetros
+        path: "/courses/:courses(\\d+)*", // Indicar que pueden repetirse los parámetros o no existir
         name: "courses.show",
         component: () => import("@/views/courses/CoursesShowView.vue")
     }
