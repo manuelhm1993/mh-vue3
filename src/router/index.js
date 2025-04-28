@@ -21,7 +21,7 @@ const routes = [
         component: () => import("@/views/courses/CoursesView.vue")
     },
     {
-        path: "/courses/:courseId(\\d+)", // Validación númerica a través de expresiones regulares
+        path: "/courses/:courses(\\d+)+", // Indicar que pueden repetirse los parámetros
         name: "courses.show",
         component: () => import("@/views/courses/CoursesShowView.vue")
     }
