@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Clases propias */
+@import "./custom-classes.css";
+
+/* Permite controlar el modo oscuro */
+@custom-variant dark (&:where(.dark, .dark *)); 

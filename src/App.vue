@@ -1,16 +1,11 @@
 <script setup>
-    import { ref, watch } from 'vue';
-
-    const cont = ref(0);
-
-    watch(cont, (newVal, oldVal) => {
-        console.log(`La variable cont cambió: ${oldVal} -> ${newVal}`);
-    }, { immediate: true }); // Si se desea que el watch se ejecute al cargar se usa immediate
+    // Para usar la sintaxis CamelCase se deben importar los componentes
+    import { RouterView } from 'vue-router';
 </script>
 
 <template>
-    {{ cont }}
-    <button type="button" @click="cont++">+</button>
+    <!-- Componente que permite renderizar la vista activa -->
+    <RouterView />
 </template>
 
 <style scoped>
