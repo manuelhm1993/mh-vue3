@@ -11,17 +11,17 @@ const routes = [
         component: Home // Componente o vista (el único que se importa en eager loader es el Home)
     },
     { 
-        path: "/about", 
+        path: "/nosotros", 
         name: "about", 
         component: () => import('@/views/AboutView.vue') // Importar los componentes en modo lazy loader
     },
     {
-        path: "/courses",
+        path: "/cursos",
         name: "courses",
         component: () => import("@/views/courses/CoursesView.vue")
     },
     {
-        path: "/courses/:courses(\\d+)?", // Indica que el parámetro puede ser null
+        path: "/cursos/:courses(\\d+)",
         name: "courses.show",
         component: () => import("@/views/courses/CoursesShowView.vue")
     }

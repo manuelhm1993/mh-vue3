@@ -41,7 +41,7 @@
         md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 
         md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <RouterLink to="/" v-slot="{ isActive }">
+                        <RouterLink :to="{ name: 'home' }" v-slot="{ isActive }">
                             <span :class="activeMenu(isActive)">
                                 Inicio
                             </span>
@@ -49,7 +49,8 @@
                     </li>
 
                     <li>
-                        <RouterLink to="/about" v-slot="{ isActive }">
+                        <!-- Uso de rutas con nombre (igual que laravel) -->
+                        <RouterLink :to="{ name: 'about' }" v-slot="{ isActive }">
                             <span :class="activeMenu(isActive)">
                                 Acerca de
                             </span>
@@ -57,7 +58,7 @@
                     </li>
 
                     <li>
-                        <RouterLink to="/courses" v-slot="{ isActive }">
+                        <RouterLink :to="{ name: 'courses' }" v-slot="{ isActive }">
                             <span :class="activeMenu(isActive)">
                                 Cursos
                             </span>
