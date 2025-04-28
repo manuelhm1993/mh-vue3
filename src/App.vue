@@ -1,9 +1,11 @@
 <script setup>
-    import OneComponent from './components/provide-inject/OneComponent.vue';
+    // Para usar la sintaxis CamelCase se deben importar los componentes
+    import { RouterView } from 'vue-router';
 </script>
 
 <template>
-    <OneComponent />
+    <!-- Componente que permite renderizar la vista activa -->
+    <RouterView />
 </template>
 
 <style scoped>
