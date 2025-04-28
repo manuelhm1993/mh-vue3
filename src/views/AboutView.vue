@@ -1,15 +1,15 @@
 <script setup>
-    import NavBar from '@/components/NavBar.vue';
+    import MainComponent from '@/components/MainComponent.vue';
 </script>
 
 <template>
-    <NavBar />
+    <MainComponent>
+        <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Esta es la página acerca de...</h1>
 
-    <main class="max-w-screen-xl flex flex-wrap mx-auto p-4">
-        <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Esta es la página acerca de...</h1>
-    </main>
+        <section>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet sint corporis modi sit, commodi nisi eveniet ratione eaque nobis, possimus id, ut laudantium molestias ducimus reiciendis beatae qui! Autem, nisi.</p>
+        </section>
+    </MainComponent>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
