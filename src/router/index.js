@@ -21,7 +21,7 @@ const routes = [
         component: () => import("@/views/courses/CoursesView.vue")
     },
     {
-        path: "/courses/:courseId", // Indicar que la ruta recibe un parámetro (igual que laravel)
+        path: "/courses/:courseId(\\d+)", // Validación númerica a través de expresiones regulares
         name: "courses.show",
         component: () => import("@/views/courses/CoursesShowView.vue")
     }
